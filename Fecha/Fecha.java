@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Fecha {
 
-	public static void main(String[] args) {
+	public static void main (String [] args)  {
 		Scanner Teclado = new Scanner (System.in);
 		Date Fecha = new Date ();
 		System.out.print("Introduzca el año: ");

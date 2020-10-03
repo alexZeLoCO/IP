@@ -32,62 +32,62 @@ public class Date {
 		}
 	}
 
-public void setMes (short m) {
-	if (m>12 || m<=0) {
-		System.out.println("El mes introducido no es válido.");
-		System.exit(0);
-	} else {
-		System.out.println("El mes introducido es válido.");
-		mes = m;
+	public void setMes (short m) {
+		if (m>12 || m<=0) {
+			System.out.println("El mes introducido no es válido.");
+			System.exit(0);
+		} else {
+			System.out.println("El mes introducido es válido.");
+			mes = m;
+		}
 	}
-}
 
-public void setAño (short a) {
-	if (a<0 || a>9999) {
-		System.out.println("El año introducido no es válido.");
-		System.exit(0);
-	} else {
-		System.out.println("El año introducido es válido.");
-		año = a;
+	public void setAño (short a) {
+		if (a<0 || a>9999) {
+			System.out.println("El año introducido no es válido.");
+			System.exit(0);
+		} else {
+			System.out.println("El año introducido es válido.");
+			año = a;
+		}
+		setDias_mes();
 	}
-	setDias_mes();
-}
 
-public void setDias_mes () {
-	if ((double)getAño()/4==(int)getAño()/4) {
-		if ((double)getAño()/100==(int)getAño()/100) {
-			if ((double)getAño()/400==(int)getAño()/400) {
+	public void setDias_mes () {
+		if ((double)getAño()/4==(int)getAño()/4) {
+			if ((double)getAño()/100==(int)getAño()/100) {
+				if ((double)getAño()/400==(int)getAño()/400) {
+					dias_mes=29;
+					System.out.println("El año introducido es bisiesto.");
+					System.out.println("Febrero tiene 29 días.");
+				} else {
+					dias_mes=28;
+					System.out.println("El año introducido no es bisiesto.");
+					System.out.println("Febrero tiene 28 días.");
+				}
+			} else {
 				dias_mes=29;
 				System.out.println("El año introducido es bisiesto.");
 				System.out.println("Febrero tiene 29 días.");
-			} else {
-				dias_mes=28;
-				System.out.println("El año introducido no es bisiesto.");
-				System.out.println("Febrero tiene 28 días.");
 			}
 		} else {
+			dias_mes=28;
+			System.out.println("El año introducido no es bisiesto.");
+			System.out.println("Febrero tiene 28 días.");
+		}
+
+		// ERROR
+/*
+		if (((double)getAño()/4 == (int)getAño()/4) && ((double) getAño()/100 != (int)getAño()/100) || (((double) getAño()/100 != (int)getAño()/100) )&& ((double) getAño()/400 == (int) getAño()/400))) {
 			dias_mes=29;
 			System.out.println("El año introducido es bisiesto.");
 			System.out.println("Febrero tiene 29 días.");
-		}
-	} else {
-		dias_mes=28;
-		System.out.println("El año introducido no es bisiesto.");
-		System.out.println("Febrero tiene 28 días.");
+		} else {
+			dias_mes=28;
+			System.out.println("El año introducido no es bisiesto.");
+			System.out.println("Febrero tiene 28 días.");
+		} 
+*/
+		//ERROR
 	}
-	
-	// ERROR
-	
-	/* if (((double)getAño()/4 == (int)getAño()/4) && (((double) getAño()/100 != (int)getAño()/100) && ((double) getAño()/400 == (int) getAño()/400))) {
-		dias_mes=29;
-		System.out.println("El año introducido es bisiesto.");
-		System.out.println("Febrero tiene 29 días.");
-	} else {
-		dias_mes=28;
-		System.out.println("El año introducido no es bisiesto.");
-		System.out.println("Febrero tiene 28 días.");
-	} */
-	
-	//ERROR
-}
 }
