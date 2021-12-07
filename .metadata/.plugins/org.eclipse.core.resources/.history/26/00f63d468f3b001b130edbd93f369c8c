@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class SegmentoTest {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner (System.in);
+		
+		Segmento s1 = new Segmento();
+		Segmento s2 = new Segmento(5.0,5.0,-2,-2);
+		Segmento s3 = new Segmento(s2);
+		
+		System.out.printf("La pendiente del segmento 2 es: %.3f.\n",s2.calculaPendiente());
+		System.out.printf("El segmento 1 y 2 son paralelos: %b.\n",s1.sonParalelos(s2));
+		System.out.printf("Los segmentos 2 y 3 son paralelos: %b.\n", s2.sonParalelos(s3));
+	}
+
+}
